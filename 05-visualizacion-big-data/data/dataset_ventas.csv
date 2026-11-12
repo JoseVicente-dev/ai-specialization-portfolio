@@ -1,0 +1,261 @@
+ID_Transaccion,Fecha,ID_Cliente,Edad_Cliente,Categoria_Producto,Monto_Venta,Cantidad,Metodo_Pago,Ciudad
+TRX-1095,2023-04-06,5325,43.0,Juguetes,181.47,4,Efectivo,Valencia
+TRX-1099,2023-04-10,5189,24.0,Deportes,190.32,4,PayPal,Barcelona
+TRX-1006,2023-01-07,5114,54.0,Electrónica,490.75,1,Tarjeta de Crédito,Valencia
+TRX-1153,2023-06-03,5073,65.0,Hogar,25.89,2,Transferencia,Bilbao
+TRX-1087,2023-03-29,5040,47.0,Deportes,174.71,2,Tarjeta de Crédito,Madrid
+TRX-1131,2023-05-12,5420,42.0,Moda,476.42,3,Efectivo,Valencia
+TRX-1204,2023-07-24,5393,22.0,Deportes,114.95,5,tarjeta,
+TRX-1071,2023-03-13,5150,54.0,Electrónica,221.63,3,tarjeta,Madrid
+TRX-1107,2023-04-18,5331,29.0,Moda,135.85,1,tarjeta,
+TRX-1247,2023-09-05,5009,31.0,Deportes,70.21,3,PayPal,Barcelona
+TRX-1197,2023-07-17,5369,26.0,Moda,432.61,1,tarjeta,Madrid
+TRX-1178,2023-06-28,5321,55.0,Juguetes,302.49,3,Transferencia,Sevilla
+TRX-1219,2023-08-08,5256,41.0,Electrónica,150.68,1,Efectivo,Bilbao
+TRX-1084,2023-03-26,5116,,Electrónica,243.14,4,Transferencia,Barcelona
+TRX-1010,2023-01-11,5346,155.0,Electrónica,338.24,1,tarjeta,
+TRX-1043,2023-02-13,5216,32.0,electrónica,310.83,2,Tarjeta de Crédito,
+TRX-1078,2023-03-20,5295,,Electrónica,104.55,5,tarjeta,Bilbao
+TRX-1030,2023-01-31,5279,62.0,Hogar,479.5,999,PayPal,Madrid
+TRX-1184,2023-07-04,5032,60.0,Juguetes,386.11,4,Transferencia,Valencia
+TRX-1195,2023-07-15,5005,34.0,Deportes,158.29,4,Tarjeta de Crédito,Madrid
+TRX-1222,2023-08-11,5259,46.0,Moda,307.06,4,Tarjeta de Crédito,Valencia
+TRX-1209,2023-07-29,5222,24.0,Moda,88.27,3,tarjeta,Bilbao
+TRX-1217,2023-08-06,5134,22.0,Hogar,165.96,3,Tarjeta de Crédito,Sevilla
+TRX-1208,2023-07-28,5150,54.0,Moda,147.5,5,Tarjeta de Crédito,Madrid
+TRX-1124,2023-05-05,5350,44.0,Juguetes,188.87,3,PayPal,Barcelona
+TRX-1142,2023-05-23,5448,68.0,Deportes,193.22,3,tarjeta,Valencia
+TRX-1076,2023-03-18,5441,48.0,Juguetes,240.67,2,Transferencia,Bilbao
+TRX-1040,2023-02-10,5412,46.0,electrónica,243.22,5,tarjeta,Barcelona
+TRX-1170,2023-06-20,5260,56.0,Electrónica,287.88,4,Tarjeta de Crédito,Madrid
+TRX-1125,2023-05-06,5166,49.0,Juguetes,237.8,4,Tarjeta de Crédito,Sevilla
+TRX-1244,2023-09-02,5306,35.0,Deportes,245.6,1,Tarjeta de Crédito,Valencia
+TRX-1169,2023-06-19,5070,22.0,Hogar,139.13,1,PayPal,
+TRX-1140,2023-05-21,5482,62.0,Hogar,419.66,1,Transferencia,Madrid
+TRX-1009,2023-01-10,5052,64.0,Electrónica,304.11,3,Tarjeta de Crédito,Valencia
+TRX-1072,2023-03-14,5424,54.0,Moda,255.3,3,Efectivo,Sevilla
+TRX-1156,2023-06-06,5126,65.0,Electrónica,183.54,1,PayPal,Sevilla
+TRX-1191,2023-07-11,5497,60.0,Deportes,216.09,5,Efectivo,Madrid
+TRX-1225,2023-08-14,5445,37.0,Deportes,309.78,2,Tarjeta de Crédito,
+TRX-1073,2023-03-15,5321,48.0,Moda,228.09,5,tarjeta,Madrid
+TRX-1177,2023-06-27,5078,33.0,Electrónica,162.73,5,tarjeta,Sevilla
+TRX-1187,2023-07-07,5305,51.0,Moda,58.97,2,Transferencia,Sevilla
+TRX-1068,2023-03-10,5193,52.0,Deportes,53.1,5,tarjeta,Sevilla
+TRX-1155,2023-06-05,5071,21.0,Electrónica,249.78,2,PayPal,Madrid
+TRX-1055,2023-02-25,5183,58.0,Electrónica,115.2,2,PayPal,Sevilla
+TRX-1216,2023-08-05,5368,40.0,Deportes,244.98,5,Transferencia,
+TRX-1080,2023-03-22,5360,24.0,Moda,332.22,3,Transferencia,Sevilla
+TRX-1077,2023-03-19,5185,69.0,Moda,93.44,4,Efectivo,Sevilla
+TRX-1174,2023-06-24,5024,43.0,Hogar,392.33,1,Tarjeta de Crédito,Madrid
+TRX-1120,2023-05-01,5327,23.0,Hogar,285.67,1,PayPal,Bilbao
+TRX-1058,2023-02-28,5309,22.0,Deportes,136.57,2,Tarjeta de Crédito,
+TRX-1090,2023-04-01,5443,61.0,Deportes,153.89,4,Transferencia,Madrid
+TRX-1238,2023-08-27,5488,34.0,Deportes,232.27,1,Tarjeta de Crédito,Valencia
+TRX-1183,2023-07-03,5305,44.0,Deportes,67.63,2,Tarjeta de Crédito,Valencia
+TRX-1063,2023-03-05,5235,33.0,Moda,402.19,2,Tarjeta de Crédito,Sevilla
+TRX-1133,2023-05-14,5412,42.0,Deportes,111.94,1,tarjeta,Madrid
+TRX-1070,2023-03-12,5282,64.0,Moda,26.07,1,Tarjeta de Crédito,Valencia
+TRX-1002,2023-01-03,5012,37.0,Juguetes,403.11,4,Transferencia,Valencia
+TRX-1223,2023-08-12,5467,52.0,Juguetes,446.92,2,Efectivo,Bilbao
+TRX-1028,2023-01-29,5332,66.0,Hogar,127.63,2,tarjeta,Valencia
+TRX-1137,2023-05-18,5033,47.0,Deportes,384.9,4,PayPal,Valencia
+TRX-1249,2023-09-07,5475,39.0,Electrónica,217.59,1,tarjeta,Barcelona
+TRX-1194,2023-07-14,5482,33.0,Hogar,35.67,1,Efectivo,Valencia
+TRX-1172,2023-06-22,5046,,Deportes,306.14,5,Efectivo,
+TRX-1082,2023-03-24,5023,60.0,Juguetes,461.42,5,Efectivo,
+TRX-1088,2023-03-30,5437,64.0,Moda,137.84,2,Efectivo,Bilbao
+TRX-1171,2023-06-21,5252,22.0,Electrónica,219.76,3,Transferencia,Bilbao
+TRX-1033,2023-02-03,5229,37.0,Moda,138.7,1,tarjeta,
+TRX-1190,2023-07-10,5128,31.0,Juguetes,95.14,3,tarjeta,Bilbao
+TRX-1227,2023-08-16,5152,69.0,Hogar,,3,Efectivo,Barcelona
+TRX-1000,2023-01-01,5327,41.0,Hogar,206.65,4,PayPal,Sevilla
+TRX-1011,2023-01-12,5379,70.0,Moda,60.29,4,tarjeta,
+TRX-1237,2023-08-26,5276,26.0,Moda,269.1,4,tarjeta,Bilbao
+TRX-1022,2023-01-23,5258,34.0,Hogar,,4,Tarjeta de Crédito,Madrid
+TRX-1104,2023-04-15,5359,46.0,Moda,286.78,3,PayPal,Barcelona
+TRX-1100,2023-04-11,5181,33.0,Electrónica,144.01,1,tarjeta,Madrid
+TRX-1101,2023-04-12,5107,30.0,Juguetes,154.24,2,Tarjeta de Crédito,Barcelona
+TRX-1079,2023-03-21,5098,30.0,Electrónica,270.44,4,Tarjeta de Crédito,Madrid
+TRX-1105,2023-04-16,5479,26.0,Deportes,267.98,1,Transferencia,Bilbao
+TRX-1138,2023-05-19,5108,36.0,Deportes,306.46,2,tarjeta,Sevilla
+TRX-1018,2023-01-19,5015,60.0,Juguetes,182.0,2,PayPal,Barcelona
+TRX-1176,2023-06-26,5056,54.0,Deportes,456.08,3,tarjeta,
+TRX-1231,2023-08-20,5311,60.0,Electrónica,29.96,2,Transferencia,
+TRX-1121,2023-05-02,5352,66.0,Deportes,,3,PayPal,Valencia
+TRX-1132,2023-05-13,5016,18.0,Hogar,351.28,2,Transferencia,Bilbao
+TRX-1039,2023-02-09,5388,,Moda,474.92,1,PayPal,
+TRX-1054,2023-02-24,5049,63.0,Hogar,471.91,4,Tarjeta de Crédito,Bilbao
+TRX-1046,2023-02-16,5079,19.0,Hogar,393.34,1,PayPal,Sevilla
+TRX-1206,2023-07-26,5174,47.0,Moda,127.91,2,tarjeta,Barcelona
+TRX-1202,2023-07-22,5384,38.0,Hogar,303.1,3,Efectivo,Valencia
+TRX-1004,2023-01-05,5140,21.0,Moda,423.44,1,PayPal,Bilbao
+TRX-1093,2023-04-04,5142,24.0,Electrónica,293.53,1,Transferencia,Barcelona
+TRX-1052,2023-02-22,5047,18.0,Hogar,455.85,4,tarjeta,Madrid
+TRX-1203,2023-07-23,5136,66.0,Moda,405.87,2,PayPal,
+TRX-1241,2023-08-30,5271,65.0,Juguetes,229.22,4,Efectivo,Valencia
+TRX-1148,2023-05-29,5202,30.0,Moda,160.23,2,Efectivo,Bilbao
+TRX-1220,2023-08-09,5390,36.0,Deportes,279.19,3,tarjeta,
+TRX-1069,2023-03-11,5040,26.0,Moda,330.82,3,Efectivo,
+TRX-1060,2023-03-02,5413,39.0,Hogar,164.76,2,Tarjeta de Crédito,Sevilla
+TRX-1051,2023-02-21,5052,,Deportes,296.38,3,Transferencia,Sevilla
+TRX-1167,2023-06-17,5185,23.0,Deportes,475.58,4,Tarjeta de Crédito,Madrid
+TRX-1122,2023-05-03,5285,33.0,Deportes,498.38,5,Tarjeta de Crédito,
+TRX-1102,2023-04-13,5343,30.0,Juguetes,306.15,5,Tarjeta de Crédito,Valencia
+TRX-1106,2023-04-17,5349,45.0,Electrónica,111.71,4,tarjeta,Barcelona
+TRX-1189,2023-07-09,5270,34.0,Juguetes,284.96,5,tarjeta,
+TRX-1061,2023-03-03,5022,22.0,Deportes,348.44,5,Efectivo,Valencia
+TRX-1173,2023-06-23,5386,33.0,Hogar,316.84,2,tarjeta,Barcelona
+TRX-1197,2023-07-17,5369,26.0,Moda,432.61,1,tarjeta,Madrid
+TRX-1149,2023-05-30,5452,36.0,Electrónica,473.16,2,PayPal,Bilbao
+TRX-1182,2023-07-02,5216,23.0,Hogar,480.85,3,PayPal,Barcelona
+TRX-1200,2023-07-20,5453,37.0,Juguetes,146.99,5,Transferencia,Sevilla
+TRX-1062,2023-03-04,5373,50.0,Moda,406.65,5,tarjeta,Madrid
+TRX-1117,2023-04-28,5194,59.0,Moda,136.79,3,Tarjeta de Crédito,Bilbao
+TRX-1142,2023-05-23,5448,68.0,Deportes,193.22,3,tarjeta,Valencia
+TRX-1065,2023-03-07,5063,60.0,Hogar,39.71,3,Transferencia,Valencia
+TRX-1097,2023-04-08,5186,39.0,Moda,176.01,4,Tarjeta de Crédito,
+TRX-1091,2023-04-02,5051,59.0,Juguetes,236.38,2,Efectivo,Bilbao
+TRX-1014,2023-01-15,5044,52.0,Hogar,107.23,5,Efectivo,Bilbao
+TRX-1086,2023-03-28,5148,44.0,Juguetes,304.39,3,Tarjeta de Crédito,Barcelona
+TRX-1205,2023-07-25,5328,18.0,Electrónica,75.09,3,tarjeta,Bilbao
+TRX-1075,2023-03-17,5453,68.0,Deportes,447.96,4,Efectivo,Sevilla
+TRX-1013,2023-01-14,5279,66.0,Moda,436.09,1,tarjeta,Sevilla
+TRX-1015,2023-01-16,5302,67.0,Deportes,144.88,4,Tarjeta de Crédito,
+TRX-1210,2023-07-30,5080,22.0,Moda,,2,Transferencia,
+TRX-1180,2023-06-30,5405,20.0,Electrónica,292.94,3,PayPal,Bilbao
+TRX-1064,2023-03-06,5274,35.0,Hogar,291.65,1,Tarjeta de Crédito,Madrid
+TRX-1019,2023-01-20,5047,,Electrónica,442.23,5,Tarjeta de Crédito,Sevilla
+TRX-1044,2023-02-14,5174,22.0,electrónica,482.59,1,Transferencia,Valencia
+TRX-1035,2023-02-05,5142,60.0,Moda,318.24,2,tarjeta,Barcelona
+TRX-1056,2023-02-26,5433,21.0,Deportes,304.21,4,Transferencia,Bilbao
+TRX-1246,2023-09-04,5250,56.0,Moda,174.11,1,PayPal,Barcelona
+TRX-1012,2023-01-13,5456,22.0,Hogar,225.73,5,Transferencia,Bilbao
+TRX-1049,2023-02-19,5390,32.0,Hogar,297.77,3,Transferencia,Sevilla
+TRX-1154,2023-06-04,5135,52.0,Hogar,156.48,2,PayPal,
+TRX-1025,2023-01-26,5287,45.0,Moda,379.53,2,Tarjeta de Crédito,Barcelona
+TRX-1009,2023-01-10,5052,64.0,Electrónica,304.11,3,Tarjeta de Crédito,Valencia
+TRX-1042,2023-02-12,5357,33.0,electrónica,197.07,1,Transferencia,Bilbao
+TRX-1136,2023-05-17,5137,68.0,Moda,303.0,1,Transferencia,Madrid
+TRX-1212,2023-08-01,5001,31.0,Electrónica,305.62,1,Efectivo,Valencia
+TRX-1166,2023-06-16,5204,50.0,Deportes,409.35,3,Tarjeta de Crédito,Sevilla
+TRX-1129,2023-05-10,5028,21.0,Electrónica,171.46,1,Efectivo,
+TRX-1126,2023-05-07,5431,48.0,Moda,167.18,5,Tarjeta de Crédito,Madrid
+TRX-1085,2023-03-27,5395,45.0,Electrónica,416.35,4,Efectivo,Valencia
+TRX-1031,2023-02-01,5214,30.0,Electrónica,39.32,4,PayPal,Madrid
+TRX-1113,2023-04-24,5373,69.0,Moda,235.12,2,Tarjeta de Crédito,Bilbao
+TRX-1181,2023-07-01,5348,57.0,Deportes,48.91,4,Transferencia,Bilbao
+TRX-1218,2023-08-07,5497,33.0,Hogar,213.2,2,Efectivo,Barcelona
+TRX-1214,2023-08-03,5369,34.0,Hogar,462.17,4,Transferencia,
+TRX-1057,2023-02-27,5176,32.0,Electrónica,418.67,5,Efectivo,Sevilla
+TRX-1236,2023-08-25,5082,24.0,Moda,104.09,1,tarjeta,Sevilla
+TRX-1024,2023-01-25,5013,56.0,Electrónica,245.75,1,PayPal,Valencia
+TRX-1017,2023-01-18,5016,26.0,Deportes,238.26,1,Transferencia,Madrid
+TRX-1192,2023-07-12,5283,,Juguetes,350.9,3,Efectivo,
+TRX-1066,2023-03-08,5498,49.0,Electrónica,275.72,4,Efectivo,Barcelona
+TRX-1224,2023-08-13,5054,63.0,Deportes,,2,Tarjeta de Crédito,Sevilla
+TRX-1161,2023-06-11,5382,48.0,Deportes,51.36,4,Transferencia,Bilbao
+TRX-1094,2023-04-05,5232,21.0,Deportes,340.73,3,Tarjeta de Crédito,Valencia
+TRX-1164,2023-06-14,5459,28.0,Hogar,349.5,2,PayPal,Barcelona
+TRX-1213,2023-08-02,5488,50.0,Hogar,415.64,3,Transferencia,Valencia
+TRX-1023,2023-01-24,5308,51.0,Juguetes,420.76,4,Transferencia,Barcelona
+TRX-1239,2023-08-28,5398,25.0,Deportes,153.52,2,Tarjeta de Crédito,Madrid
+TRX-1123,2023-05-04,5112,28.0,Hogar,284.19,4,PayPal,Valencia
+TRX-1215,2023-08-04,5448,26.0,Hogar,230.79,1,Transferencia,
+TRX-1005,2023-01-06,5125,-10.0,Electrónica,461.38,4,Transferencia,Madrid
+TRX-1116,2023-04-27,5236,21.0,Deportes,214.11,3,PayPal,
+TRX-1045,2023-02-15,5142,39.0,electrónica,364.81,4,Efectivo,Madrid
+TRX-1185,2023-07-05,5197,55.0,Juguetes,320.25,4,tarjeta,Valencia
+TRX-1016,2023-01-17,5216,26.0,Juguetes,177.13,4,PayPal,Valencia
+TRX-1048,2023-02-18,5490,53.0,Electrónica,169.3,4,Efectivo,Madrid
+TRX-1034,2023-02-04,5301,43.0,Electrónica,422.83,5,PayPal,Sevilla
+TRX-1003,2023-01-04,5379,33.0,Deportes,367.61,5,tarjeta,Barcelona
+TRX-1234,2023-08-23,5191,37.0,Deportes,296.6,3,Transferencia,
+TRX-1198,2023-07-18,5058,60.0,Hogar,54.17,5,Transferencia,Bilbao
+TRX-1060,2023-03-02,5413,39.0,Hogar,164.76,2,Tarjeta de Crédito,Sevilla
+TRX-1110,2023-04-21,5325,33.0,Electrónica,135.36,1,tarjeta,
+TRX-1027,2023-01-28,5366,52.0,Juguetes,476.92,5,Efectivo,Valencia
+TRX-1096,2023-04-07,5427,64.0,Hogar,257.27,4,Transferencia,
+TRX-1029,2023-01-30,5359,64.0,Deportes,52.94,3,Efectivo,Valencia
+TRX-1112,2023-04-23,5273,46.0,Juguetes,361.68,4,tarjeta,Sevilla
+TRX-1179,2023-06-29,5081,56.0,Hogar,225.84,4,Tarjeta de Crédito,Bilbao
+TRX-1026,2023-01-27,5101,31.0,Juguetes,45.0,3,Tarjeta de Crédito,Barcelona
+TRX-1007,2023-01-08,5071,23.0,Deportes,276.38,3,Efectivo,Sevilla
+TRX-1181,2023-07-01,5348,57.0,Deportes,48.91,4,Transferencia,Bilbao
+TRX-1050,2023-02-20,5172,55.0,Moda,465.87,5,Tarjeta de Crédito,Madrid
+TRX-1108,2023-04-19,5036,35.0,Juguetes,215.09,5,Tarjeta de Crédito,Madrid
+TRX-1037,2023-02-07,5445,41.0,Hogar,247.31,3,PayPal,Sevilla
+TRX-1157,2023-06-07,5381,38.0,Hogar,483.44,5,Tarjeta de Crédito,Bilbao
+TRX-1021,2023-01-22,5119,28.0,Electrónica,476.58,5,Tarjeta de Crédito,Madrid
+TRX-1118,2023-04-29,5138,52.0,Juguetes,338.7,5,Tarjeta de Crédito,
+TRX-1114,2023-04-25,5125,53.0,Deportes,28.28,1,tarjeta,Bilbao
+TRX-1186,2023-07-06,5195,54.0,Juguetes,,1,Transferencia,Sevilla
+TRX-1175,2023-06-25,5440,25.0,Juguetes,202.58,4,tarjeta,Barcelona
+TRX-1201,2023-07-21,5274,47.0,Deportes,399.8,4,tarjeta,Valencia
+TRX-1240,2023-08-29,5472,24.0,Juguetes,498.53,2,Efectivo,Valencia
+TRX-1144,2023-05-25,5161,60.0,Electrónica,359.85,3,PayPal,Madrid
+TRX-1134,2023-05-15,5161,34.0,Juguetes,374.53,4,tarjeta,Valencia
+TRX-1135,2023-05-16,5205,68.0,Juguetes,152.72,1,tarjeta,Bilbao
+TRX-1211,2023-07-31,5232,52.0,Juguetes,400.46,1,Tarjeta de Crédito,Barcelona
+TRX-1230,2023-08-19,5259,18.0,Juguetes,301.82,3,PayPal,
+TRX-1233,2023-08-22,5078,53.0,Deportes,414.28,4,Transferencia,Madrid
+TRX-1020,2023-01-21,5111,53.0,Electrónica,85000.0,3,Efectivo,Bilbao
+TRX-1141,2023-05-22,5290,64.0,Juguetes,162.2,1,PayPal,Madrid
+TRX-1032,2023-02-02,5112,63.0,Moda,34.89,1,Transferencia,Sevilla
+TRX-1067,2023-03-09,5472,,Hogar,337.53,3,Efectivo,Bilbao
+TRX-1226,2023-08-15,5320,57.0,Electrónica,32.42,5,tarjeta,Valencia
+TRX-1168,2023-06-18,5112,29.0,Hogar,60.89,3,Tarjeta de Crédito,Valencia
+TRX-1188,2023-07-08,5239,38.0,Deportes,135.14,4,Tarjeta de Crédito,Valencia
+TRX-1162,2023-06-12,5299,50.0,Deportes,256.04,5,Transferencia,Sevilla
+TRX-1228,2023-08-17,5430,59.0,Deportes,343.66,5,PayPal,
+TRX-1193,2023-07-13,5440,38.0,Deportes,245.56,3,PayPal,
+TRX-1081,2023-03-23,5035,24.0,Hogar,315.64,3,Efectivo,Valencia
+TRX-1109,2023-04-20,5311,47.0,Moda,286.48,4,PayPal,Barcelona
+TRX-1104,2023-04-15,5359,,Moda,286.78,3,PayPal,Barcelona
+TRX-1145,2023-05-26,5108,63.0,Moda,,3,Tarjeta de Crédito,
+TRX-1092,2023-04-03,5194,,Juguetes,380.23,4,tarjeta,Bilbao
+TRX-1152,2023-06-02,5234,55.0,Hogar,69.24,5,PayPal,Bilbao
+TRX-1235,2023-08-24,5390,60.0,Electrónica,386.29,3,Transferencia,
+TRX-1248,2023-09-06,5057,63.0,Deportes,97.2,5,PayPal,Barcelona
+TRX-1083,2023-03-25,5338,,Moda,391.83,5,tarjeta,Valencia
+TRX-1103,2023-04-14,5136,52.0,Hogar,442.45,5,PayPal,Barcelona
+TRX-1165,2023-06-15,5298,21.0,Deportes,92.83,4,Tarjeta de Crédito,Madrid
+TRX-1163,2023-06-13,5219,51.0,Juguetes,296.97,2,Efectivo,Bilbao
+TRX-1199,2023-07-19,5349,59.0,Moda,132.04,1,Tarjeta de Crédito,
+TRX-1245,2023-09-03,5165,36.0,Hogar,216.01,4,Transferencia,Sevilla
+TRX-1074,2023-03-16,5316,33.0,Juguetes,193.85,5,Efectivo,Barcelona
+TRX-1115,2023-04-26,5083,24.0,Moda,161.23,4,Transferencia,Sevilla
+TRX-1229,2023-08-18,5327,51.0,Deportes,,5,PayPal,
+TRX-1160,2023-06-10,5134,55.0,Electrónica,74.76,2,Transferencia,Valencia
+TRX-1119,2023-04-30,5473,18.0,Hogar,197.13,4,PayPal,
+TRX-1053,2023-02-23,5194,22.0,Moda,200.15,4,Transferencia,Valencia
+TRX-1151,2023-06-01,5329,,Moda,381.34,4,Efectivo,Sevilla
+TRX-1147,2023-05-28,5255,27.0,Juguetes,46.17,4,tarjeta,Bilbao
+TRX-1130,2023-05-11,5117,28.0,Moda,376.58,2,Tarjeta de Crédito,Valencia
+TRX-1207,2023-07-27,5057,57.0,Hogar,91.51,2,tarjeta,Valencia
+TRX-1242,2023-08-31,5470,53.0,Juguetes,410.84,5,tarjeta,Barcelona
+TRX-1146,2023-05-27,5335,49.0,Juguetes,41.85,3,Tarjeta de Crédito,Madrid
+TRX-1097,2023-04-08,5186,39.0,Moda,176.01,4,Tarjeta de Crédito,
+TRX-1232,2023-08-21,5101,70.0,Juguetes,387.08,3,Efectivo,Bilbao
+TRX-1008,2023-01-09,5377,23.0,Moda,455.33,3,PayPal,Madrid
+TRX-1159,2023-06-09,5275,21.0,Juguetes,433.63,5,PayPal,Barcelona
+TRX-1036,2023-02-06,5414,59.0,Hogar,134.5,2,Efectivo,Barcelona
+TRX-1196,2023-07-16,5348,43.0,Deportes,155.7,3,Transferencia,Valencia
+TRX-1139,2023-05-20,5467,45.0,Deportes,490.65,3,tarjeta,Sevilla
+TRX-1047,2023-02-17,5110,55.0,Deportes,98.61,2,PayPal,
+TRX-1184,2023-07-04,5032,60.0,Juguetes,386.11,4,Transferencia,Valencia
+TRX-1001,2023-01-02,5057,69.0,Moda,341.06,3,Transferencia,Sevilla
+TRX-1112,2023-04-23,5273,46.0,Juguetes,361.68,4,tarjeta,Sevilla
+TRX-1059,2023-03-01,5135,20.0,Hogar,354.65,4,PayPal,
+TRX-1243,2023-09-01,5000,27.0,Hogar,485.15,3,Tarjeta de Crédito,Barcelona
+TRX-1111,2023-04-22,5087,22.0,Moda,248.52,2,Efectivo,Sevilla
+TRX-1089,2023-03-31,5119,21.0,Moda,468.62,5,Tarjeta de Crédito,
+TRX-1143,2023-05-24,5367,53.0,Hogar,165.09,1,tarjeta,Valencia
+TRX-1006,2023-01-07,5114,54.0,Electrónica,490.75,1,Tarjeta de Crédito,Valencia
+TRX-1098,2023-04-09,5083,69.0,Electrónica,254.02,2,Efectivo,Barcelona
+TRX-1041,2023-02-11,5081,25.0,electrónica,143.0,4,PayPal,Bilbao
+TRX-1221,2023-08-10,5091,28.0,Deportes,230.12,3,PayPal,Madrid
+TRX-1158,2023-06-08,5287,21.0,Deportes,141.19,4,Transferencia,
+TRX-1150,2023-05-31,5468,31.0,Hogar,326.18,5,PayPal,Sevilla
+TRX-1128,2023-05-09,5397,43.0,Juguetes,366.22,5,tarjeta,Sevilla
+TRX-1038,2023-02-08,5003,46.0,Electrónica,74.91,5,Tarjeta de Crédito,Bilbao
+TRX-1127,2023-05-08,5393,31.0,Deportes,130.66,1,Transferencia,Sevilla

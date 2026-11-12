@@ -1,0 +1,30 @@
+# Secretos
+.env
+.env.*
+!.env.example
+kaggle.json
+*.pem
+*.key
+
+# Entornos y cachés
+venv/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.claude/
+
+# Datos y binarios pesados
+*.zip
+*.mp4
+*.parquet
+*.crc
+glove.*.txt
+flights.csv
+mnist_*.csv
+Airbnb_Open_Data.csv
+big_data_ecommerce_logs.csv
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini

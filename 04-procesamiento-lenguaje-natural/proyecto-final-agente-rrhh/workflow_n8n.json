@@ -1,0 +1,1047 @@
+{
+  "name": "Agente RRHH NovaTech",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c085125f-09ed-4888-bb23-a15653292546",
+      "name": "Telegram Trigger",
+      "credentials": {
+        "telegramApi": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "ROLE: Agente Senior de IA - Recursos Humanos NovaTech\nEres el Agente Principal de NovaTech. Tu misión es gestionar conversaciones, resolver dudas de políticas internas y automatizar trámites de RRHH de forma profesional, empática y eficiente.\n\nHERRAMIENTAS (TOOLS)\n- RAG_Search: Consulta documentos de cultura, beneficios, carrera, DEI y protocolos.\n- consultar_datos_empleado: Accede a la hoja 'Empleados' para obtener ID, Email, Departamento y Saldo de Vacaciones.\n- registrar_solicitud_vacaciones: Crea una nueva fila en la hoja 'Solicitudes Vacaciones' con estado \"Pendiente\".\n- actualizar_solicitud_vacaciones: Modifica el estado de una solicitud existente (Aprobada/Rechazada).\n- Email_Approval: Dispara el flujo de aprobación hacia el líder del área.\n- agendar_cita_director: Crea un evento en el calendario de Google.\n- log_conversacion: Registra cada interacción en la hoja 'Registro Conversaciones' para el Dashboard de Lovable.\n\nFLUJOS DE TRABAJO (PROTOCOLOS)\n1. Cultura y FAQs\n - Acción: Ante cualquier duda sobre políticas o beneficios, usa siempre RAG_Search.\n - Restricción: Si la información no está en los documentos, indica que escalarás el caso a un humano; nunca inventes respuestas.\n2. Gestión de Vacaciones\nPara procesar esta solicitud, sigue estrictamente este orden:\n - Validación de Identidad: Solicita obligatoriamente el ID de Empleado.\n - Verificación de Saldo: Usa consultar_datos_empleado. Si los \"Días Solicitados\" superan el \"Saldo Vacaciones\", informa la negativa y el motivo.\n - Recolección de Datos: Si tiene saldo, solicita: Departamento, Fecha Inicio, Fecha Fin y Días Totales.\n - Registro y Aprobación: \n  Usa registrar_solicitud_vacaciones (Estado: Pendiente).\n  Activa Email_Approval e informa al usuario que su líder debe aprobar la solicitud por correo.\n - Cierre: Al recibir la respuesta del líder (vía webhook), informa al empleado el cambio de estado mediante Telegram.\n3. Agendamiento con Director de RRHH\n- Acción: Solicita Motivo de la cita, Fecha y Hora específica.\n- Confirmación: Usa agendar_cita_director y confirma que el empleado recibirá una invitación en su correo institucional.\n\nREGLAS CRÍTICAS DE OPERACIÓN\n- Menú Inicial: Saluda cordialmente y presenta estas opciones:\n 1. Cultura y FAQs\n 2. Gestión de Vacaciones\n 3. Agendamiento RRHH\n- Registro Obligatorio: Tras cada respuesta o acción (FAQ, Vacaciones o Cita), ejecuta la herramienta log_conversacion para alimentar los KPIs del Dashboard en Lovable.\n- Formato de Datos: Asegúrate de que las fechas tengan un formato claro (DD/MM/AAAA) para evitar errores en Google Sheets."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "019106e5-7f61-4092-904b-be3e2a70f53f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "o4-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        128,
+        192
+      ],
+      "id": "e06cd42e-b280-4c4e-9913-80c8b2a40b32",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        560,
+        0
+      ],
+      "id": "1cfc0f8a-8e03-496f-a00e-d13e19261c45",
+      "name": "Send a text message",
+      "credentials": {
+        "telegramApi": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Agente de RH via Chat \n",
+        "height": 464,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "5a174392-d174-4e08-8947-946f54011c67",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Ruta B (RAG)\n",
+        "height": 464,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1072,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "0dd77bbe-953c-4ec5-9f9e-a63466a90303",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "memoryKey": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        -544,
+        -16
+      ],
+      "id": "59824aeb-9d1b-4872-ab6b-a4c25a81d3fd",
+      "name": "Simple Vector Store"
+    },
+    {
+      "parameters": {
+        "formTitle": "Base de conocimiento Agente RH NovaTech",
+        "formDescription": "Documentos de Cultura (RAG)",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Carga de documentos",
+              "fieldType": "file",
+              "acceptFileTypes": ".doc, .docx, .pdf, .md"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -816,
+        -48
+      ],
+      "id": "a9181354-334c-45f2-8e22-a92fd22700d6",
+      "name": "On form submission"
+    },
+    {
+      "parameters": {
+        "model": "text-embedding-ada-002",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -592,
+        160
+      ],
+      "id": "1373e32c-cdd0-45c4-9712-21904794e4cd",
+      "name": "Embeddings OpenAI",
+      "credentials": {
+        "openAiApi": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        -416,
+        160
+      ],
+      "id": "866928fa-d8cc-4785-b615-24d72a0be2e7",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "Contiene información sobre el 'Manifiesto de Cultura', 'Manual de Beneficios', 'Career Ladders' y políticas 'DEI'. Usa siempre la herramienta RAG_Search para obtener información verídica antes de responder.",
+        "memoryKey": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "contecto_agenteRH_novatech"
+        },
+        "topK": 6
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreInMemory",
+      "typeVersion": 1.3,
+      "position": [
+        -880,
+        160
+      ],
+      "id": "912087df-921d-4d29-a560-38465024b7b0",
+      "name": "RAG_Search"
+    },
+    {
+      "parameters": {
+        "content": "## Ruta A (Google Sheets)\n",
+        "height": 464,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        816,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "4b362032-06ce-4fce-8dd0-0a76f99f8bfc",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.chat.id }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        240,
+        160
+      ],
+      "id": "95e66553-66f6-4377-88d1-c2928260e5ab",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Úsala para obtener información de un empleado (Email, Departamento, Saldo Vacaciones) usando su nombre o correo. Es obligatorio verificar el 'Saldo Vacaciones' antes de procesar una solicitud",
+        "documentId": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "NovaTech_Empleados"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "Empleados"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "ID",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "combineFilters": "OR",
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRangeA1",
+              "range": "A:L"
+            }
+          },
+          "returnFirstMatch": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        1008,
+        480
+      ],
+      "id": "b4879510-b10d-421c-be41-fff40affe174",
+      "name": "consultar_datos_empleado",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Úsala para crear una nueva solicitud de vacaciones en la base de datos. Informa al usuario que su solicitud quedó en estado 'Pendiente' para aprobación\n\n",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "NovaTech_Empleados"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "Solicitudes Vacaciones"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID Solicitud": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID_Solicitud', ``, 'string') }}",
+            "Nombre Empleado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Empleado', ``, 'string') }}",
+            "Departamento": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Departamento', ``, 'string') }}",
+            "Fecha Inicio": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_Inicio', ``, 'string') }}",
+            "Fecha Fin": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_Fin', ``, 'string') }}",
+            "Días Solicitados": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('D_as_Solicitados', ``, 'string') }}",
+            "Fecha Solicitud": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha_Solicitud', ``, 'string') }}",
+            "Estado": "Pendiente",
+            "ID Empleado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID_Empleado', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "ID Empleado"
+          ],
+          "schema": [
+            {
+              "id": "ID Solicitud",
+              "displayName": "ID Solicitud",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID Empleado",
+              "displayName": "ID Empleado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre Empleado",
+              "displayName": "Nombre Empleado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Departamento",
+              "displayName": "Departamento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha Inicio",
+              "displayName": "Fecha Inicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha Fin",
+              "displayName": "Fecha Fin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Días Solicitados",
+              "displayName": "Días Solicitados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha Solicitud",
+              "displayName": "Fecha Solicitud",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Aprobado Por",
+              "displayName": "Aprobado Por",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Comentarios",
+              "displayName": "Comentarios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        1264,
+        544
+      ],
+      "id": "d9ff454d-441e-4b5b-b691-a0c176efcb19",
+      "name": "registrar_solicitud_vacaciones",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Úsala para registrar cada conversación e interacción en la hoja 'Registro Conversaciones' para que se vea en el Dashboard",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "NovaTech_Empleados"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "Registro Conversaciones"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre Empleado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre_Empleado', ``, 'string') }}",
+            "Estado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Estado', ``, 'string') }}",
+            "ID Empleado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID_Empleado', ``, 'string') }}",
+            "ID Conversación": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID_Conversaci_n', ``, 'string') }}",
+            "Fecha": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Fecha', ``, 'string') }}",
+            "Hora": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Hora', ``, 'string') }}",
+            "Canal": "\"Bot de Telegram\"",
+            "Tipo de Consulta": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tipo_de_Consulta', ``, 'string') }}",
+            "Subtema": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subtema', ``, 'string') }}",
+            "Resumen Consulta": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Resumen_Consulta', ``, 'string') }}",
+            "Tiempo Respuesta (s)": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tiempo_Respuesta__s_', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "ID Empleado"
+          ],
+          "schema": [
+            {
+              "id": "ID Conversación",
+              "displayName": "ID Conversación",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ID Empleado",
+              "displayName": "ID Empleado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre Empleado",
+              "displayName": "Nombre Empleado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hora",
+              "displayName": "Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Canal",
+              "displayName": "Canal",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Tipo de Consulta",
+              "displayName": "Tipo de Consulta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Subtema",
+              "displayName": "Subtema",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Resumen Consulta",
+              "displayName": "Resumen Consulta",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tiempo Respuesta (s)",
+              "displayName": "Tiempo Respuesta (s)",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        1504,
+        464
+      ],
+      "id": "db24654f-a3dc-4890-bae8-08692d3da5f1",
+      "name": "log_conversacion",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Ruta D (Human in the Loop) Aprobación de vacaciones\n",
+        "height": 464,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -112,
+        352
+      ],
+      "typeVersion": 1,
+      "id": "e5ca2e28-46dd-4078-aee6-53c60e80c977",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "message": "=\"El empleado [Nombre] solicita vacaciones del [Fecha Inicio] al [Fecha Fin]. ¿Deseas aprobar?\"",
+        "sendTo": "\"correo@ejemplo.com\"",
+        "subject": "\"Aprobación requerida - vacaciones [Nombre]\"",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailHitlTool",
+      "typeVersion": 2.2,
+      "position": [
+        64,
+        480
+      ],
+      "id": "84ed0b51-f74f-4c9e-8f3b-01c051624864",
+      "name": "Email_Approval",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "NovaTech_Empleados"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "list",
+          "cachedResultName": "Solicitudes Vacaciones"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Estado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Estado', ``, 'string') }}",
+            "Aprobado Por": "=\"Jefe de RRHH\"",
+            "ID Empleado": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('ID_Empleado__using_to_match_', ``, 'string') }}",
+            "Comentarios": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Comentarios', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "ID Empleado"
+          ],
+          "schema": [
+            {
+              "id": "ID Solicitud",
+              "displayName": "ID Solicitud",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID Empleado",
+              "displayName": "ID Empleado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre Empleado",
+              "displayName": "Nombre Empleado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Departamento",
+              "displayName": "Departamento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fecha Inicio",
+              "displayName": "Fecha Inicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fecha Fin",
+              "displayName": "Fecha Fin",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Días Solicitados",
+              "displayName": "Días Solicitados",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Fecha Solicitud",
+              "displayName": "Fecha Solicitud",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Aprobado Por",
+              "displayName": "Aprobado Por",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Comentarios",
+              "displayName": "Comentarios",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "locationDefine": {
+            "values": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        432,
+        624
+      ],
+      "id": "f388901a-8bbc-451a-8ecd-64c122b96a04",
+      "name": "actualizar_solicitud_vacaciones",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Google Sheets OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "descriptionType": "manual",
+        "toolDescription": "Úsala cuando un empleado solicite una reunión o cita con el Director de Recursos Humanos. Debes pedirle al usuario la fecha y la hora deseada.",
+        "calendar": {
+          "__rl": true,
+          "value": "<ID>",
+          "mode": "id"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {
+          "attendees": []
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        1216,
+        64
+      ],
+      "id": "6fc458d9-cb24-4cd9-b2b7-f308f6555867",
+      "name": "agendar_cita_director",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "<CREDENTIAL_ID>",
+          "name": "Google Calendar OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Ruta C (Agendar cita)\n",
+        "height": 464,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        816,
+        -128
+      ],
+      "typeVersion": 1,
+      "id": "f58b394a-b090-4b48-afce-090be79c5486",
+      "name": "Sticky Note4"
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings OpenAI": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          },
+          {
+            "node": "RAG_Search",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Simple Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RAG_Search": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "consultar_datos_empleado": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "registrar_solicitud_vacaciones": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "log_conversacion": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email_Approval": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "actualizar_solicitud_vacaciones": {
+      "ai_tool": [
+        [
+          {
+            "node": "Email_Approval",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "agendar_cita_director": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  }
+}

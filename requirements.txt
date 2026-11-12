@@ -1,0 +1,20 @@
+# Dependencias para ejecutar las libretas en local.
+# El agente de vuelos tiene su propio requirements.txt.
+jupyterlab
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+sympy
+scikit-learn
+tensorflow
+datasets
+ucimlrepo
+ydata-profiling
+openpyxl
+pyspark
+nltk
+spacy
+textblob
+gensim
