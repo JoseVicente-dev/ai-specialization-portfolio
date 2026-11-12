@@ -30,9 +30,9 @@ The notebooks are written in Spanish, the language of the program. This page sum
 |---|---|---|---|
 | 01 | [Programming for Data Analytics](01-analitica-de-datos/) | Python, Pandas, SQL/SQLite, data cleaning, EDA | 5 + 3 study notes |
 | 02 | [Machine Learning](02-aprendizaje-automatico/) | Regression, classification, neural networks, clustering, PCA | 5 |
-| 03 | [Deep Learning](03-aprendizaje-profundo/) | MLP, CNN, transfer learning, RNN/LSTM, attention | 5 |
-| 04 | [Natural Language Processing](04-procesamiento-lenguaje-natural/) | Embeddings, WordNet, sentiment analysis, POS tagging, RAG and agents | 2 + project |
-| 05 | [Visualization and Big Data](05-visualizacion-big-data/) | Business EDA, Apache Spark, analytics agents, dashboards | 2 + project |
+| 03 | [Deep Learning](03-aprendizaje-profundo/) | MLP, CNN, transfer learning, RNN/LSTM, attention, GANs | 5 + 3 on GANs |
+| 04 | [Natural Language Processing](04-procesamiento-lenguaje-natural/) | Embeddings, WordNet, sentiment analysis, POS tagging, RAG and agents | 2 + project + class material |
+| 05 | [Visualization and Big Data](05-visualizacion-big-data/) | Business EDA, Apache Spark, Power BI, analytics agents | 2 + dashboard + project |
 | 06 | [Mathematics for AI](06-matematicas-para-ia/) | Linear algebra, probability, random variables | 4 |
 
 Each folder has its own README describing every notebook, the tools used, and a button to open it in Google Colab.
@@ -65,11 +65,11 @@ Only small datasets are included. Large ones (Airbnb, GloVe, US flights, e-comme
 
 ## About authorship
 
-The notebooks are my solutions to the program's assignments. The assignment statements, which appear as text inside several of them, belong to the UAM instructors. In some assignments I used AI assistants (Gemini in Colab, Claude Code) for support; where that shaped the result, the notebook says so.
+The notebooks are my solutions to the program's assignments. The assignment statements, which appear as text inside several of them, belong to the UAM instructors. Two items are not mine and are labeled as such, with attribution inside each notebook: the three GAN notebooks, adapted from third-party tutorials, and the NLP course guide notebook. In some assignments I used AI assistants (Gemini in Colab, Claude Code) for support; where that shaped the result, the notebook says so.
 
 ## Contact
 
-**Jose Vicente Velasco** · [GitHub](https://github.com/JoseVicente-dev)
+**José Vicente Velasco López** · [GitHub](https://github.com/JoseVicente-dev)
 
 ## License
 

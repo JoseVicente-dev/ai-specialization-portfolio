@@ -4,6 +4,16 @@ Proyecto final del curso de Procesamiento de Lenguaje Natural: un agente convers
 
 > 🇬🇧 Final project for the NLP course: a conversational HR agent for a fictional company. It talks to employees over Telegram, answers internal policy questions grounded in company documents (RAG), and automates vacation requests end to end, including human approval by email.
 
+## Arquitectura
+
+El sistema tiene tres capas:
+
+1. **Frontend.** Un dashboard administrativo hecho en Lovable que muestra las conversaciones, los KPIs y el estado de las solicitudes de vacaciones: [pulse-nova-dash.lovable.app](https://pulse-nova-dash.lovable.app).
+2. **Agente principal.** Un flujo de n8n conectado a Telegram que conversa con los empleados y decide qué herramienta usar.
+3. **Recursos.** Hojas de cálculo de Google, un vector store con los documentos de la empresa, Google Calendar y Gmail.
+
+El dashboard y el agente se comunican a través de las hojas de cálculo: n8n las escribe y el dashboard las lee.
+
 ## Qué hace
 
 | Ruta | Función | Nodos de n8n |

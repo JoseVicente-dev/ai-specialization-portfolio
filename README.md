@@ -28,9 +28,9 @@ Libretas y proyectos que desarrollé durante la **Especialización en Inteligenc
 |---|---|---|---|
 | 01 | [Programación para Analítica de Datos](01-analitica-de-datos/) | Python, Pandas, SQL/SQLite, limpieza de datos, EDA | 5 + 3 de notas |
 | 02 | [Aprendizaje Automático](02-aprendizaje-automatico/) | Regresión, clasificación, redes neuronales, clustering, PCA | 5 |
-| 03 | [Aprendizaje Profundo](03-aprendizaje-profundo/) | MLP, CNN, transfer learning, RNN/LSTM, atención | 5 |
-| 04 | [Procesamiento de Lenguaje Natural](04-procesamiento-lenguaje-natural/) | Embeddings, WordNet, sentimientos, POS tagging, RAG y agentes | 2 + proyecto |
-| 05 | [Visualización y Big Data](05-visualizacion-big-data/) | EDA de negocio, Apache Spark, agentes de analítica, dashboards | 2 + proyecto |
+| 03 | [Aprendizaje Profundo](03-aprendizaje-profundo/) | MLP, CNN, transfer learning, RNN/LSTM, atención, GAN | 5 + 3 de GAN |
+| 04 | [Procesamiento de Lenguaje Natural](04-procesamiento-lenguaje-natural/) | Embeddings, WordNet, sentimientos, POS tagging, RAG y agentes | 2 + proyecto + material de clase |
+| 05 | [Visualización y Big Data](05-visualizacion-big-data/) | EDA de negocio, Apache Spark, Power BI, agentes de analítica | 2 + dashboard + proyecto |
 | 06 | [Matemáticas para IA](06-matematicas-para-ia/) | Álgebra lineal, probabilidad, variables aleatorias | 4 |
 
 Cada carpeta tiene su propio README con la descripción de cada libreta, las herramientas usadas y un botón para abrirla en Google Colab.
@@ -63,11 +63,11 @@ El repositorio solo incluye datasets pequeños. Los grandes (Airbnb, GloVe, vuel
 
 ## Sobre la autoría
 
-Las libretas son mis soluciones a las actividades del programa. Los enunciados, que aparecen como texto dentro de varias de ellas, son de los docentes de la UAM. En algunos trabajos usé asistentes de IA (Gemini en Colab, Claude Code) como apoyo; donde influyó en el resultado, la libreta lo indica.
+Las libretas son mis soluciones a las actividades del programa. Los enunciados, que aparecen como texto dentro de varias de ellas, son de los docentes de la UAM. Dos contenidos no son míos y están marcados como tales, con atribución en la propia libreta: las tres libretas de GAN, adaptadas de tutoriales de terceros, y la libreta guía del curso de NLP. En algunos trabajos usé asistentes de IA (Gemini en Colab, Claude Code) como apoyo; donde influyó en el resultado, la libreta lo indica.
 
 ## Contacto
 
-**Jose Vicente Velasco** · [GitHub](https://github.com/JoseVicente-dev)
+**José Vicente Velasco López** · [GitHub](https://github.com/JoseVicente-dev)
 
 ## Licencia
 

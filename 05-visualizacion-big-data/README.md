@@ -8,6 +8,7 @@ Análisis exploratorio orientado a negocio, procesamiento distribuido con Apache
 |---|---|---|---|
 | [`01_eda_comportamiento_consumidor.ipynb`](01_eda_comportamiento_consumidor.ipynb) | EDA de ventas y comportamiento del consumidor: limpieza, outliers, visualizaciones e insights de negocio. | Pandas, Seaborn | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JoseVicente-dev/ai-specialization-portfolio/blob/main/05-visualizacion-big-data/01_eda_comportamiento_consumidor.ipynb) |
 | [`02_procesamiento_distribuido_spark.ipynb`](02_procesamiento_distribuido_spark.ipynb) | Calidad de datos, latencias y compras atípicas, y agregaciones de negocio sobre logs de e-commerce. | PySpark | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/JoseVicente-dev/ai-specialization-portfolio/blob/main/05-visualizacion-big-data/02_procesamiento_distribuido_spark.ipynb) |
+| [`03_dashboard_power_bi_online_retail.pbix`](03_dashboard_power_bi_online_retail.pbix) | Dashboard de ventas en Power BI sobre el dataset *Online Retail II*. GitHub no lo previsualiza: descárgalo y ábrelo con Power BI Desktop. | Power BI |  |
 
 ## Proyecto: agente de analítica de vuelos
 
